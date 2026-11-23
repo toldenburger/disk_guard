@@ -1,0 +1,10 @@
+[Unit]
+Description=Warn when the root disk is filling up (notify only)
+
+[Service]
+Type=oneshot
+# %h is your home folder; change the path if you cloned the repo somewhere else.
+ExecStart=/usr/bin/python3 -I %h/disk_guard/disk_watch.py
+# Optional: extra folders to name in the warning
+#Environment=DISK_GUARD_EXTRA=%h/.cache/some-app
+Nice=10

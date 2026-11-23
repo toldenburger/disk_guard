@@ -1,0 +1,6 @@
+[Unit]
+Description=Monthly disk review nudge (report only, deletes nothing)
+
+[Service]
+Type=oneshot
+ExecStart=%h/disk_guard/disk_prune_report.sh

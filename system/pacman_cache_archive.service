@@ -1,0 +1,10 @@
+[Unit]
+Description=Move old pacman package versions to a backup disk (rollback copies)
+After=local-fs.target
+
+[Service]
+Type=oneshot
+# install.sh replaces DEST with the folder you give it
+ExecStart=/usr/local/bin/pacman_cache_archive DEST
+Nice=19
+IOSchedulingClass=idle
